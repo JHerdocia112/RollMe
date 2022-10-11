@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+    version="5.0">
+
+    <!-- JSP CONFIGURATION -->
+    <jsp-config>
+        <jsp-property-group>
+           <url-pattern>*.jsp</url-pattern>
+           <trim-directive-whitespaces>true</trim-directive-whitespaces>
+        </jsp-property-group>
+    </jsp-config>
+
+    <!-- CONTEXT PARAMETERS -->
+    <!-- <context-param>
+        <param-name>SMTP_HOST</param-name>
+        <param-value>smtp.gmail.com</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>SMTP_PORT</param-name>
+        <param-value>587</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>SMTP_USERNAME</param-name>
+        <param-value>xfit.donotreply@gmail.com</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>SMTP_PASSWORD</param-name>
+        <param-value>c5']flGzQlEfM(Y,</param-value>
+    </context-param> -->
+    
+    <!-- SESSION CONFIGURATION -->
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

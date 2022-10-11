@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "lifecycle",
+            "type": "shell",
+            "command": "mvn ${input:lifecycleTask -f {workspaceFolder}/pom.xml",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "mvn clean validate compile package -DskipTests -Dmaven.test.skip=true -f ${workspaceFolder}/pom.xml; mvn tomcat7:undeploy; mvn tomcat7:deploy",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "group": "build"
+        }
+    ]
+}

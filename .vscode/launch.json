@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        
+        {
+            "type": "java",
+            "name": "Java",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": "8000"
+        },
+        {
+            "type": "firefox",
+            "name": "Firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "http://localhost:8080/rollme",
+            "pathMappings": [
+                {
+                    "url": "http://localhost:8080/rollme/",
+                    "path": "${workspaceFolder}/src/main/webapp/"
+                }
+            ]
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch In Firefox",
+            "preLaunchTask": "build",
+            "configurations": [
+                "Java",
+                "Firefox",
+            ],
+            "stopAll": false
+        },
+        {
+            "name": "Deploy and launch In Firefox",
+            "preLaunchTask": "deploy",
+            "configurations": [
+                "Java",
+                "Firefox",
+            ],
+            "stopAll": false
+        }
+    ]
+}
