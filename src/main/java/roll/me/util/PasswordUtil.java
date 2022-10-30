@@ -6,7 +6,6 @@ import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 import java.util.Base64;
-import java.util.Random;
 import java.util.regex.Pattern;
 
 import javax.crypto.SecretKeyFactory;
@@ -31,15 +30,6 @@ public class PasswordUtil {
         }
 
         return true;
-    }
-
-    public static String generateCode() {
-        int code = new Random().nextInt(999999);
-        return String.format("%06d", code);
-    }
-
-    public static String generateAccessToken() {
-        return generateRandomBase64String(24);
     }
 
     public static String generateRandomBase64String(int length) {

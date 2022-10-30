@@ -11,11 +11,10 @@ import roll.me.util.DBUtil;
 
 public class UsersDB{
 
-    public static boolean hasUser(String Email, String Name){
+    public static boolean hasUserByName(String Name){
 
-        Users userEmail = selectByEmail(Email);
         Users userName = selectByName(Name);
-        return userEmail != null || userName != null;
+        return userName != null;
 
     }
 
@@ -30,7 +29,7 @@ public class UsersDB{
 
         try{
 
-            if (UsersDB.hasUser(Email, Name)){
+            if (UsersDB.hasUserByName(Name)){
 
                 throw new NonUniqueResultException();
 
