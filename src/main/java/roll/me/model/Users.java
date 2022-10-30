@@ -26,11 +26,11 @@ public class Users {
     private String name;
 
     @Basic
-    @Column(name = "email", nullable = false, length = 32)
+    @Column(name = "email", nullable = false, length = 64)
     private String email;
 
     @Basic
-    @Column(name = "pass", nullable = false, length = 32)
+    @Column(name = "pass", nullable = false)
     private String pass;
 
     public Users(){
