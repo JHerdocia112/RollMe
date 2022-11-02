@@ -1,6 +1,9 @@
 package roll.me.model;
 
+import java.util.Collection;
+
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 @Entity
 @NamedQueries({
@@ -32,6 +36,9 @@ public class Users {
     @Basic
     @Column(name = "pass", nullable = false)
     private String pass;
+
+    @OneToMany(mappedBy = "userToCharacterId", cascade = CascadeType.ALL)
+    private Collection<Characters> charactersById;
 
     public Users(){
 
